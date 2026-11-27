@@ -6,8 +6,6 @@
 [![GitHub release](https://img.shields.io/github/v/release/jukefr/death-messages?style=flat-square&logo=github)](https://github.com/jukefr/death-messages/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](https://github.com/jukefr/death-messages/blob/main/LICENSE)
 
-![Death Messages icon](https://raw.githubusercontent.com/jukefr/death-messages/main/resources/icon.png)
-
 Death Messages is a server-side Minecraft mod for **Fabric** and **NeoForge**. It lets you replace
 the vanilla death message for any creature or damage type, and add your own messages or commands
 when players join, leave, kill a mob, or kill another player. No client mod is required.
