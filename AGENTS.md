@@ -159,14 +159,16 @@ behind a small platform helper.
 
 ### Platform/version differences
 
-- **26.x** renamed `ResourceKey#location()` to `ResourceKey#identifier()`. Use
-  `fr.juke.util.ResourceIds.of(key)`; do not call either directly in shared code.
-- **26.x** removed `CommandSourceStack#hasPermission(int)`. Use
+- **1.21.11 and 26.x** renamed `ResourceKey#location()` to `ResourceKey#identifier()`.
+  Use `fr.juke.util.ResourceIds.of(key)`; do not call either directly in shared code.
+- **1.21.11 and 26.x** removed `CommandSourceStack#hasPermission(int)`. Use
   `fr.juke.util.PermissionUtil.isOperator(source)`, which uses
-  `permissions().hasPermission(Permissions.COMMANDS_GAMEMASTER)` on 26.x and
-  `hasPermission(2)` on 1.21.x.
-- **26.x** removed `Entity#getServer()`. Use `entity.level().getServer()`.
-- **26.x** `ResourceLocation` is now `Identifier`. Use `var` for registry keys.
+  `permissions().hasPermission(Permissions.COMMANDS_GAMEMASTER)` on 1.21.11+ and
+  `hasPermission(2)` on 1.21.1.
+- **1.21.11 and 26.x** removed `Entity#getServer()`. Use `entity.level().getServer()`, which works
+  on every branch.
+- **1.21.11 and 26.x** use `Identifier` where 1.21.1 used `ResourceLocation`. Use `var` for
+  registry keys.
 - **Authlib** differences do not matter here; there is no profile code.
 - Fabric uses `ServerPlayConnectionEvents.JOIN`/`DISCONNECT` and
   `ServerLivingEntityEvents.AFTER_DEATH`.
@@ -394,9 +396,9 @@ published. Its files can stay downloadable.
   `no_entity` (`minecraft:mob_attack`). Falling uses `no_entity` (`minecraft:fall`).
 - **Projectiles.** Use `source.getEntity()` first (the shooter), then `source.getDirectEntity()`
   (the arrow). This is why a skeleton's arrow says "slain by a skeleton".
-- **`Entity#getServer()` is gone in 26.x.** Use `level().getServer()`.
-- **`ResourceKey#location()` is gone in 26.x.** Use `ResourceIds.of`.
-- **`hasPermission(int)` is gone in 26.x.** Use `PermissionUtil.isOperator`.
+- **`Entity#getServer()` is gone in 1.21.11+.** Use `level().getServer()`.
+- **`ResourceKey#location()` is gone in 1.21.11+.** Use `ResourceIds.of`.
+- **`hasPermission(int)` is gone in 1.21.11+.** Use `PermissionUtil.isOperator`.
 - **Mixin levels.** 1.21.x uses `JAVA_21`; 26.x uses `JAVA_25`.
 - **NeoForge mod id** is `death_messages`, not `death-messages`.
 - **NeoForge mixins** must be registered in `neoforge.mods.toml` with `[[mixins]]`.
