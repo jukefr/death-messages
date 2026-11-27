@@ -1,7 +1,6 @@
 package fr.juke.util;
 
 import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.server.permissions.Permissions;
 
 /**
  * Permission checks differ between 1.21.x ({@code hasPermission(int)}) and 26.x
@@ -13,6 +12,6 @@ public final class PermissionUtil {
     }
 
     public static boolean isOperator(CommandSourceStack source) {
-        return source.permissions().hasPermission(Permissions.COMMANDS_GAMEMASTER);
+        return source.hasPermission(2);
     }
 }

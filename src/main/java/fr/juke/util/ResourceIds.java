@@ -11,6 +11,6 @@ public final class ResourceIds {
     }
 
     public static String of(ResourceKey<?> key) {
-        return key.identifier().toString();
+        return key.location().toString();
     }
 }
